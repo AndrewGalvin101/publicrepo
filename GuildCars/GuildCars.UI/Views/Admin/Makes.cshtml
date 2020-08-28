@@ -1,0 +1,53 @@
+﻿@model GuildCars.UI.Models.MakesViewModel
+@{
+    ViewBag.Title = "Makes";
+}
+<br />
+<h3>Makes</h3>
+
+<div class="col-md-12" style="border: 1px solid black;">
+    <br />
+    @using (Html.BeginForm("AddMake", "Admin", FormMethod.Post, new { @class = "form-inline", enctype = "multipart/form-data", id = "frmAddMake" }))
+    {
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="col-md-2 justify-content-md-end"  style="padding-left: 0px;"><strong>New Make </strong></label>
+                @Html.TextBoxFor(m => m.newMake.Make, new { @class = "form-control", id = "newMake" })
+                <button class="btn btn-outline-dark" id="save-button" style="margin-left: 20px;">Save</button>
+            </div>
+            
+        </div>
+
+        <br />
+    }
+    <br />
+</div>
+<br/>
+<div class="col-md-6" style="border: 1px solid black;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Make
+                </th>
+                <th>
+                    Date Added
+                </th>
+                <th>
+                    User
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var make in Model.makes)
+            {
+                <tr>
+                    <td>@($"{make.Make}")</td>
+                    <td>@($"{make.CreateDate.Date.ToShortDateString()}")</td>
+                    <td>@($"{make.UserName}")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

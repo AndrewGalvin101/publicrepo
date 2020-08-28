@@ -1,0 +1,70 @@
+﻿@model GuildCars.UI.Models.EditUserModel
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<br />
+<h3>Edit User</h3>
+<br />
+@using (Html.BeginForm("EditUser", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmAddUser" }))
+{
+    <div class="row">
+        <div class="form-group col-md-5">
+            <label><strong>First Name</strong></label>
+            @Html.TextBoxFor(m => m.details.FirstName, new { @class = "form-control" })
+            @Html.HiddenFor(m => m.user.Id)
+        </div>
+        <div class="form-group col-md-5">
+            <label><strong>Last Name</strong></label>
+            @Html.TextBoxFor(m => m.details.LastName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-5">
+            <label><strong>Email</strong></label>
+            @Html.TextBoxFor(m => m.details.Email, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-5">
+            <label><strong>Role</strong></label>
+            <select class="form-control" id="role" name="details.Role" >
+                <option value="admin">Admin</option>
+                <option value="sales">Sales</option>
+                <option value="disabled">Disabled</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-5">
+            @*<label><strong>Password</strong></label>
+            @Html.PasswordFor(m => m.details.Password, new { @class = "form-control", type = "password", id = "password" })*@
+            <button class="btn btn-outline-dark" id="save-button" style="margin-top: 25px;">Save</button>
+        </div>
+        @*<div class="form-group col-md-5">
+            <label><strong>Confirm Password</strong></label>
+            <input type="password" id="confirmPassword" class="form-control" />
+            <span id="message"></span>
+        </div>*@
+    </div>
+}
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#role').val('@Model.details.Role')
+            $('#password, #confirmPassword').on('keyup', function () {
+                if ($('#password').val() == $('#confirmPassword').val()) {
+                    $('#message').html('Matching').css('color', 'green');
+                    $('#save-button').prop('disabled', false);
+                }
+                else {
+                    $('#message').html('Not Matching').css('color', 'red');
+                    $('#save-button').prop('disabled', true);
+                }
+
+            });
+        });
+
+    </script>
+
+}

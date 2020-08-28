@@ -1,0 +1,92 @@
+﻿@model GuildCars.UI.Models.SalesReportModel
+@{
+    ViewBag.Title = "Sales";
+}
+<br />
+<h3>Sales Report</h3>
+<br />
+<div class="container body-content">
+
+    <div class="col-md-11" style="border:solid">
+        <br />
+        <form id="salesReport" class="col-md-10">
+            <h5>Filters</h5>
+            <div class="form-inline">
+                <label class="col-md-1 justify-content-end"><strong>User</strong></label>
+                @*@Html.DropDownList("val", Model.Users, "-All-", new { @class = "form-control col-md-3", id = "user" } )*@
+                <select class="form-control" id="user">
+                    <option value="">-All-</option>
+                    @foreach (var user in Model.Users)
+                    {
+                        <option value="@user.FullName">@user.FullName</option>
+                    }
+                </select>
+                <div class="form-inline col-md-8">
+                    <label class="col-md-3 justify-content-end"><strong>From Date</strong></label>
+                    <input type="text" class="form-control col-md-3" id="fromDate" />
+                    <label class="col-md-3 justify-content-end"><strong>To Date</strong></label>
+                    <input type="text" class="form-control col-md-3" id="toDate" />
+                </div>
+            </div><br />
+            <div class="form-inline">
+                <button type="submit" class="btn btn-outline-dark col-md-4">Search</button>
+            </div>
+        </form>
+        <br />
+    </div>
+    <br />
+    <div id="searchResults" style="display: none;">
+        <h3>Search Results</h3><br />
+        <div class="row">
+            <div class="col-md-6" style="border: 1px solid black; margin-left: 12px">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Total Sales</th>
+                            <th>Total Vehicles </th>
+                    </thead>
+                    <tbody id="rows">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    @section Scripts
+{
+        <script>
+            $(document).ready(function () {
+                $("#salesReport").submit(function (e) {
+                    $('#rows').empty();
+                    search();
+                    return false;
+                });
+            });
+
+            function search() {
+                $('#searchResults').show();
+                var params;
+
+                params = 'user=' + $('#user').val() + '&fromDate=' + $('#fromDate').val() + '&toDate=' + $('#toDate').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://localhost:44342/api/reports/sales?' + params,
+                    success: function (results) {
+                            $.each(results, function (index, row) {
+                                $('#rows').append('<tr><td>' + row.User + '</td><td>$' + row.TotalSales.toLocaleString() +
+                                    '</td><td>' + row.TotalVehicles + '</td> </tr>');
+                            });
+                        
+                    },
+                    error: function () {
+                        alert('Error performing search, try again later!')
+                    }
+                });
+            }
+
+        </script>
+    }
+

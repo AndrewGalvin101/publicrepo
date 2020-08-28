@@ -1,0 +1,83 @@
+﻿ 
+@model GuildCars.UI.Models.ContactUsModel
+@{
+    ViewBag.Title = "Contact";
+}
+<br />
+<h2>Contact Us</h2>
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmAddContact" }))
+        {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Name</label>
+                @Html.TextBoxFor(m => m.contact.Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                @Html.TextBoxFor(m => m.contact.Email, new { @class = "form-control", id = "email" })
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                @Html.TextBoxFor(m => m.contact.Phone, new { @class = "form-control", id = "phone" })
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                @*@Html.TextAreaFor(m => m.contact.Message, new { @class = "form-control", id = "message", placeholder = Model.VIN })*@
+                <textarea rows="4"
+                          cols="50"
+                          class="form-control"
+                          name="contact.Message"
+                          id="message">@Model.insert</textarea>
+            </div>
+            <button class="btn btn-outline-dark" id="submit-button" >Submit</button>
+        }
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.4731875489383!2d-75.55001028462284!3d39.79637647944211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6fcbcd90c2269%3A0xdc4458749d906015!2s2600%20Concord%20Pike%2C%20Wilmington%2C%20DE%2019803!5e0!3m2!1sen!2sus!4v1596741591631!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <p>
+            <strong>2600 Concord Pike</strong><br />
+            <strong>Wilmington, DE 19803</strong>
+        </p>
+        <br />
+        <p>
+            <strong>Sales: 111-111-1111</strong><br />
+            <strong>Service: 111-111-1112</strong>
+        </p>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#frmAddContact').validate({
+                rules: {
+                    'Name': {
+                        required: true
+                    },
+                    'Email': {
+                        email: true,
+                        required: function (element) {
+                            !$("#phone").valid();
+                        }
+                    },
+                    'Phone': {
+                        phoneUS: true,
+                        required: function (element) {
+                            !$("#email").valid();
+                        }
+                    },
+                    'Message': {
+                        required: true,
+                    },
+                }
+            });
+
+        });
+
+
+
+    </script>
+}

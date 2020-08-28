@@ -1,0 +1,51 @@
+﻿@model GuildCars.UI.Models.IndexModel
+
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div style="margin-top: 50px;">
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @for(var i=0; i<Model.Specials.Count(); i++)
+            {
+                var special = Model.Specials[i];
+                var active = "active";
+                if (i > 0) { active = ""; }
+                var color = "aqua";
+                if (i%2==0) { color = "lightgoldenrodyellow"; }
+                if (i%3==0) { color = "lavender"; }
+                <div class="carousel-item @active">
+                    <div class="jumbotron" style="background-color: @color">
+                        <h1 class="display-4">@special.SpecialTitle.ToString()</h1>
+                        <p class="lead">@special.SpecialDescription.ToString()</p>
+                        @Html.ActionLink("Learn more", "Specials", "Home", new { @class = "btn btn-outline-dark btn-lg"}) 
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col">
+        <h3>Featured Vehicles</h3>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var vehicle in Model.Featured)
+    {
+
+        <div class="col-sm-6 col-md-3">
+            <div class="border border-dark" style="margin-top: 5px; margin-bottom: 10px;">
+                <p class="recentListing"><img src="@Url.Content("~/Images/" + vehicle.ImageFileName)" /></p>
+                <p class="recentListing">@Html.ActionLink(@vehicle.Year.ToString() + " " + @vehicle.Make + " " + @vehicle.Model, "Details", "Inventory", new { ID = vehicle.ID }, null) </p>
+                <p class="recentListing">@vehicle.SalePrice.ToString("c") </p>
+            </div>
+        </div>
+    }
+</div>

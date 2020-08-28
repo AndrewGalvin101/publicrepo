@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h3>Sales</h3>
+
+<div>
+    @{
+        Html.RenderPartial("_InventorySearch");
+    }
+</div>
+
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#inventorySearch").submit(function (e) {
+                search();
+                return false;
+            });
+        });
+
+        function search() {
+            var params;
+            var imagePath = '@Url.Content("~/Images/")';
+            var purchasePath = '@Url.Action("Purchase", "Sales")/';
+
+            params = 'quickSearch=' + $('#quickSearch').val() + '&minPrice=' + $('#minPrice').val() + '&maxPrice=' + $('#maxPrice').val() +
+                '&minYear=' + $('#minYear').val() + '&maxYear=' + $('#maxYear').val() + '&newOrUsed=';
+
+            $.ajax({
+                type: 'GET',
+                url: 'https://localhost:44342/api/inventory/search?' + params,
+                success: function (results) {
+                    $('#searchResults').empty();
+                    $('#searchResults').append('<h3>Search Results</h3><br />');
+                    console.log(results);
+
+                    $.each(results, function (index, vehicle) {
+                        var html = '<div class="container">' +
+                            '<div class="row" style="border:solid; margin-top: 5px; margin-bottom: 5px;">' +
+                            '<div class="col md-3">' +
+                            '<p><strong>' + vehicle.Year + ' ' + vehicle.Make + ' ' + vehicle.Model + '</strong></p>' +
+                            '<p><img src="' + imagePath + vehicle.ImageFileName + '" /></p>' +
+                            '</div>' +
+                            '<div class="col-md-3" style:"text-align: center;">' +
+                            '<p><strong>Body Style </strong>' + vehicle.BodyStyle + '</p>' +
+                            '<p><strong>Transmission </strong>' + vehicle.Transmission + '</p>' +
+                            '<p><strong>Color </strong>' + vehicle.Color + '</p>' +
+                            '</div>' +
+                            '<div class="col-md-3" style: "text-align: center;">' +
+                            '<p><strong>Interior </strong>' + vehicle.Interior + '</p>' +
+                            '<p><strong>Mileage </strong>' + vehicle.Mileage + '</p>' +
+                            '<p><strong>VIN# </strong>' + vehicle.VIN + '</p>' +
+                            '</div>' +
+                            '<div class="col-md-3">' +
+                            '<p><strong>Sale Price $</strong>' + vehicle.SalePrice.toLocaleString() + '</p>' +
+                            '<p><strong>MSRP $</strong>' + vehicle.MSRP.toLocaleString() + '</p>' +
+                            '<p style=><a class="btn btn-primary btn-sm"' +
+                            ' href="' + purchasePath + vehicle.ID + '" role="button">Purchase</a></p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+
+                        $('#searchResults').append(html.toString());
+                    });
+                },
+                error: function () {
+                    alert('Error performing search, try again later!')
+                }
+            });
+        }
+
+    </script>
+}

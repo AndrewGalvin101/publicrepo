@@ -1,0 +1,56 @@
+﻿@model GuildCars.UI.Models.ModelsViewModel
+@{
+    ViewBag.Title = "Models";
+}
+<br />
+<h3>Models</h3>
+
+<div class="col-md-12" style="border: 1px solid black;">
+    <br />
+    @using (Html.BeginForm("AddModel", "Admin", FormMethod.Post, new { @class = "form-inline", enctype = "multipart/form-data", id = "frmAddModel" }))
+    {
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="col-md-2 justify-content-md-start" style="padding-left: 0px; padding-right: 0px;"><strong>New Model</strong></label>
+                @Html.TextBoxFor(m => m.newModel.Model, new { @class = "form-control", id = "newModel", style = "padding-left: 0px;" })
+                <label class="col-md-1 justify-content-md-end" style="padding-left: 0px;"><strong>Make</strong></label>
+                @Html.DropDownListFor(m => m.newModel.MakeID, Model.makes, new { @class = "form-control", id = "newModelMake" })
+                <button class="btn btn-outline-dark" id="save-button" style="margin-left: 10px;">Save</button>
+            </div>
+
+        </div>
+        <br />
+    }
+    <br />
+</div>
+<br />
+<div class="col-md-6" style="border: 1px solid black;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Date Added
+                </th>
+                <th>
+                    User
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var model in Model.models)
+            {
+                <tr>
+                    <td>@($"{model.Model}")</td>
+                    <td>@($"{model.CreateDate.Date.ToShortDateString()}")</td>
+                    <td>@($"{model.UserName}")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

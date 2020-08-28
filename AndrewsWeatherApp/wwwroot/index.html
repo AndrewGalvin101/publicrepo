@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+    Name: Andrew
+    Date Created: May 2020
+    Most recent revision: 5/14/20
+-->
+<html>
+    <head>
+        <title>Weather</title>
+        <meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="css/styles.css" rel="stylesheet">
+              <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <h1 style="text-align: center;  font-family: Verdana;">Andrew's Weather App</h1>
+        </div>
+        <hr style="border: 1px solid;" />
+        <div class ="row" style="padding-top: 5px;">
+            <div id="topRowForm" class="form-group">
+              <label for="zip-code" align="right" class="col-md-1 col-md-offset-2 control-label">
+                Zip Code:
+              </label>
+              <div class="col-md-2" style="padding-bottom: 5px;">
+                  <input type="number"
+                         class="form-control"
+                         id="zip-code"
+                         value="19803" required/>
+              </div>
+              <label for="units" align="right" class="col-md-1 control-label">
+                Units:
+              </label>
+              <div class="col-md-2"  style="padding-bottom: 5px;">
+                <select class="form-control" id="units" required>
+                  <option value="imperial" default>Imperial</option>
+                  <option value="metric">Metric</option>
+                  Units:
+                </select>
+              </div>
+              <div class="col-md-2"  style="padding-bottom: 5px;">
+                  <button type="button"
+                          id="get-weather-button"
+                          class="btn btn-default">
+                      Get Weather
+                  </button>
+              </div>
+            </div>
+        </div>
+        <div class="row" id="current" style="display: none;">
+          <h3 id="city" style="text-align: center; font-family: Verdana;"></h3>
+          <div id="icon" align="right" class="col-md-6">
+          </div>
+          <div  id="conditions" class="col-md-6" style="white-space: nowrap;">
+          </div>
+        </div>
+        <div class="row" id="forecast" style="display: none; padding-top: 20px;">
+          <h3 id="forehead" style="text-align: center;  font-family: Verdana;"></h3>
+          <p id="foretext" style="text-align: center;  font-family: Verdana;"></p>
+          <div id="day1" class="col-md-2 col-md-offset-1" style="padding-top: 5px;">
+          </div>
+          <div id="day2" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div id="day3" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div id="day4" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div id="day5" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div class="row" id="three-hour-click" style="padding-top: 20px;">
+            <div style="text-align: center; padding-bottom: 5px;">
+                <button type="button"
+                        id="three-hour-button">
+                        <!-- class="btn btn-default"> -->
+                    Click for 3-hour increments
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="three-hour forecasts" style="padding-top: 20px">
+          <h3 id="three-hour-head" style="text-align: center; font-family: Verdana;"></h3>
+          <p id="three-hour-head-text" style="text-align: center; font-family: Verdana;"></p>
+          <div id="threeHour1" class="col-md-2 col-md-offset-1" style="padding-top: 5px;">
+          </div>
+          <div id="threeHour2" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div id="threeHour3" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div id="threeHour4" class="col-md-2" style="padding-top: 5px;">
+          </div>
+          <div id="threeHour5" class="col-md-2" style="padding-top: 5px;">
+          </div>
+        </div>
+
+      </div> <!-- container -->
+
+      <script src="js/jquery-2.2.4.min.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+      <script src="js/home.js"></script>
+    </body>
+    <footer id="footer" style="text-align: center; font-family: Verdana; display: none;">
+      Data provided by <a href="https://openweathermap.org/" target="_blank">Open Weather</a>
+    </footer>
+  </html>

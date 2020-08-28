@@ -1,0 +1,143 @@
+﻿@model GuildCars.UI.Models.PurchaseView
+@{
+    ViewBag.Title = "Purchase";
+}
+<br />
+<h3>Purchase</h3>
+<br />
+<div class="container">
+    <div class="row" style="border:solid; margin-top: 5px; margin-bottom: 5px;">
+        <div class="col md-3">
+            <p><strong>@Model.vehicle.Year @Model.vehicle.Make @Model.vehicle.Model</strong></p>
+            <p><img src="~/Images/@Model.vehicle.ImageFileName" /></p>
+        </div>
+        <div class="col-md-3" style:"text-align: center;">
+            <p><strong>Body Style </strong>@Model.vehicle.BodyStyle</p>
+            <p><strong>Transmission </strong>@Model.vehicle.Transmission</p>
+            <p><strong>Color </strong>@Model.vehicle.Color</p>
+        </div>
+        <div class="col-md-3" style:"text-align: center;">
+            <p><strong>Interior </strong>@Model.vehicle.Interior</p>
+            <p><strong>Mileage </strong>@Model.vehicle.Mileage</p>
+            <p><strong>VIN# </strong>@Model.vehicle.VIN</p>
+        </div>
+        <div class="col-md-3">
+            <p><strong>Sale Price </strong>@Model.vehicle.SalePrice.ToString("c")</p>
+            <p><strong>MSRP </strong>@Model.vehicle.MSRP.ToString("c")</p>
+        </div>
+        <div class="offset-3 col-md-9">
+            <p><strong>Description </strong>@Model.vehicle.Description</p>
+        </div>
+    </div>
+</div>
+<br />
+<h3>Sales Information</h3>
+
+@using (Html.BeginForm("Purchase", "Sales", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmAddPurchase" }))
+{
+    <div class="row">
+        <div class="col-md-4">
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Name</label>
+                @Html.TextBoxFor(m => m.purchaser.Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                @Html.TextBoxFor(m => m.purchaser.Email, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Street1</label>
+                @Html.TextBoxFor(m => m.purchaser.Street1, new { @class = "form-control", id = "email" })
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                @Html.TextBoxFor(m => m.purchaser.City, new { @class = "form-control", id = "city" })
+            </div>
+            <div class="form-group">
+                <label>Zipcode</label>
+                @Html.TextBoxFor(m => m.purchaser.ZipCode, new { @class = "form-control", id = "zipcode" })
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <br />
+            <div class="form-group">
+                <label>Phone</label>
+                @Html.TextBoxFor(m => m.purchaser.Phone, new { @class = "form-control", id = "phone" })
+            </div>
+                @Html.HiddenFor(m => m.vehicle.SalePrice)
+                @Html.HiddenFor(m => m.vehicle.MSRP)
+            <br /><br />
+            <p></p>
+            <br />
+            <div class="form-group">
+                <label>Street2</label>
+                @Html.TextBoxFor(m => m.purchaser.Street2, new { @class = "form-control", id = "street2" })
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <select class="form-control" id="state" name="purchaser.State">
+                    <option value="DE">DE</option>
+                    <option value="MD">MD</option>
+                    <option value="NJ">NJ</option>
+                    <option value="PA">PA</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="form-group">
+                <label>Purchase Price</label>
+                @Html.TextBoxFor(m => m.purchaser.PurchasePrice, new { @class = "form-control", id = "purchasePrice", })
+            </div>
+            <button class="btn btn-outline-dark" id="save-button">Save</button>
+        </div>
+
+        <div class="col md-6">
+            <p></p><br />
+            <div class="form-group">
+                <select class="form-control" id="state" name="purchaser.PurchaseType">
+                    <option value="Dealer Finance">Dealer Finance</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Bank Finance">Bank Finance</option>
+                </select>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            $('#frmAddPurchase').validate({
+                rules: {
+                    'Name': {
+                        required: true
+                    },
+                    'Email': {
+                        email: true,
+                        required: function (element) {
+                            !$("#phone").valid();
+                        }
+                    },
+                    'Phone': {
+                        phoneUS: true,
+                        required: function (element) {
+                            !$("#email").valid();
+                        }
+                    },
+                }
+            });
+        });
+
+    </script>
+}
+

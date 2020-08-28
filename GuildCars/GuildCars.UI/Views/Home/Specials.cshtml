@@ -1,0 +1,24 @@
+﻿@model List<GuildCars.Models.Tables.SalesSpecial>
+@{
+    ViewBag.Title = "Specials";
+}
+
+<h2>Specials</h2>
+
+<div>
+
+    @for (var i = 0; i < Model.Count(); i++)
+    {
+        var special = Model[i];
+        var color = "aqua";
+        if (i % 2 == 0) { color = "lightgoldenrodyellow"; }
+        if (i % 3 == 0) { color = "lavender"; }
+        {
+            <div class="jumbotron" style="background-image:linear-gradient(); background-color: @color;">
+                <h1 class="display-4">@special.SpecialTitle</h1>
+                <p class="lead">@special.SpecialDescription</p>
+            </div>
+        }
+    }
+</div>
+

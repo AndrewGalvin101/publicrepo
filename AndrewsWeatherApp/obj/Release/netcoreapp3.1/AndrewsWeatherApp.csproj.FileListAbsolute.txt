@@ -1,0 +1,25 @@
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\AndrewsWeatherApp.exe
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\AndrewsWeatherApp.deps.json
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\AndrewsWeatherApp.runtimeconfig.json
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\AndrewsWeatherApp.runtimeconfig.dev.json
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\AndrewsWeatherApp.dll
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\AndrewsWeatherApp.pdb
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.AssemblyInfoInputs.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.AssemblyInfo.cs
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.RazorTargetAssemblyInfo.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\staticwebassets\AndrewsWeatherApp.StaticWebAssets.Manifest.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\staticwebassets\AndrewsWeatherApp.StaticWebAssets.xml
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.dll
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.pdb
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.genruntimeconfig.cache
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\dotnet-bundle.dll
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\NUglify.dll
+C:\Users\agalv\source\repos\AndrewsWeatherApp\obj\Release\netcoreapp3.1\AndrewsWeatherApp.csproj.CopyComplete
+C:\Users\agalv\source\repos\AndrewsWeatherApp\bin\Release\netcoreapp3.1\Pages\Razor Pages\bundleconfig.json

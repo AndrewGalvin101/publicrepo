@@ -1,0 +1,6 @@
+C:\Users\agalv\source\repos\FlooringMastery.Models\bin\Debug\FlooringMastery.Models.dll
+C:\Users\agalv\source\repos\FlooringMastery.Models\bin\Debug\FlooringMastery.Models.pdb
+C:\Users\agalv\source\repos\FlooringMastery.Models\obj\Debug\FlooringMastery.Models.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\FlooringMastery.Models\obj\Debug\FlooringMastery.Models.dll
+C:\Users\agalv\source\repos\FlooringMastery.Models\obj\Debug\FlooringMastery.Models.pdb
+C:\Users\agalv\source\repos\FlooringMastery.Models\obj\Debug\FlooringMastery.Models.csproj.CoreCompileInputs.cache

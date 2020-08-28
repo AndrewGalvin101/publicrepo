@@ -1,0 +1,14 @@
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.UI.exe.config
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.UI.exe
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.UI.pdb
+C:\Users\agalv\source\repos\FlooringMastery.UI\obj\Debug\FlooringMastery.UI.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\FlooringMastery.UI\obj\Debug\FlooringMastery.UI.exe
+C:\Users\agalv\source\repos\FlooringMastery.UI\obj\Debug\FlooringMastery.UI.pdb
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.Models.dll
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.Models.pdb
+C:\Users\agalv\source\repos\FlooringMastery.UI\obj\Debug\FlooringMastery.UI.csproj.CopyComplete
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.BLL.dll
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.BLL.pdb
+C:\Users\agalv\source\repos\FlooringMastery.UI\obj\Debug\FlooringMastery.UI.csproj.CoreCompileInputs.cache
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.Data.dll
+C:\Users\agalv\source\repos\FlooringMastery.UI\bin\Debug\FlooringMastery.Data.pdb

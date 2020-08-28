@@ -1,0 +1,281 @@
+﻿@model IEnumerable<DVDLibrary.Models.Tables.Dvd>
+
+<!DOCTYPE html>
+<!--
+    Name: Andrew
+    Date Created: May 2020
+    Most recent revision: 5/9/20
+-->
+<html>
+<head>
+    <title>DVD Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="padding-top: 40px;">
+            <div id="topRowForm" class="form-group">
+                <div class="col-md-3" style="padding-bottom: 5px;">
+                    <button type="button"
+                            id="create-dvd-button"
+                            class="btn btn-default"
+                            onclick="showAddForm()">
+                        Create DVD
+                    </button>
+                </div>
+                <div class="col-md-offset-1 col-md-1" style="padding-bottom: 5px;">
+                    <button type="button"
+                            id="search-button"
+                            class="btn btn-default">
+                        Search
+                    </button>
+                </div>
+                <div class="col-md-3" style="padding-bottom: 5px;">
+                    <select class="form-control" id="search-category" required>
+                        <option value="" disabled selected hidden>Search Category</option>
+                        <option value="Title">Title</option>
+                        <option value="ReleaseYear">Year</option>
+                        <option value="Director">Director</option>
+                        <option value="Rating">Rating</option>
+                    </select>
+                </div>
+                <div class="col-md-4" style="padding-bottom: 5px;">
+                    <input type="text"
+                           class="form-control"
+                           id="search-term"
+                           placeholder="Search Term" required />
+                </div>
+                <hr style="border: 1px solid;">
+            </div> <!-- /topRowForm -->
+        </div>
+        <ul class="list-group" id="errorMessages"></ul>
+        <div class="row">
+            <div id="dvdTableDiv">
+                <table id="dvdTable" class="table table-hover">
+                    <tr>
+                        <th width="20%" style="text-align: center;">Title</th>
+                        <th width="20%" style="text-align: center;">Release Date</th>
+                        <th width="20%" style="text-align: center;">Director</th>
+                        <th width="20%" style="text-align: center;">Rating</th>
+                        <th width="7%" style="text-align: center;"></th>
+                        <th width="0.2%" style="text-align: center;"></th>
+                        <th width="13%" style="text-align: center;"></th>
+                    </tr>
+                    <!-- This holds the list of dvds - we will add rows dynamically using jQuery -->
+                    <tbody id="contentRows"></tbody>
+                </table>
+            </div>
+
+            <div id="editFormDiv" style="display: none">
+                <h2 id="edit-h2"></h2>
+                <hr style="border: 1px solid;">
+
+                <form class="form-horizontal" role="form" id="edit-form">
+                    <div class="form-group">
+                        <label for="edit-title" class="col-md-1 control-label">
+                            Title:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-title"
+                                   required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-releaseYear" class="col-md-1 control-label">
+                            Release Date:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-releaseYear"
+                                   required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-director" class="col-md-1 control-label">
+                            Director:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-director" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-rating" class="col-md-1 control-label">
+                            Rating:
+                        </label>
+
+                        <div class="col-md-6">
+                            <select id="edit-rating" required>
+                                <option value="G" default>G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                                <option value="NC-17">NC-17</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-notes" class="col-md-1 control-label">
+                            Notes:
+                        </label>
+
+                        <div class="col-md-6">
+                            <textarea rows="4"
+                                      cols="50"
+                                      form="usrform"
+                                      class="form-control"
+                                      id="edit-notes">
+                        </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-1 col-md-1">
+                            <input type="hidden" id="edit-dvd-id">
+                            <button type="button"
+                                    id="edit-cancel-button"
+                                    class="btn btn-default"
+                                    onclick="hideEditForm()">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button"
+                                    id="edit-button"
+                                    class="btn btn-default">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="addFormDiv" style="display: none">
+                <h2 id="add-h2">Create DVD</h2>
+                <hr style="border: 1px solid;">
+
+                <form class="form-horizontal" role="form" id="add-form">
+                    <div class="form-group">
+                        <label for="add-title" class="col-md-1 control-label">
+                            Title:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   id="add-title"
+                                   placeholder="Title" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-releaseYear" class="col-md-1 control-label">
+                            Release Date:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   id="add-releaseYear"
+                                   placeholder="Release Date" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-director" class="col-md-1 control-label">
+                            Director:
+                        </label>
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control"
+                                   id="add-director"
+                                   placeholder="Director" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-rating" class="col-md-1 control-label">
+                            Rating:
+                        </label>
+
+                        <div class="col-md-6">
+                            <select id="add-rating" required>
+                                <option value="G" selected="selected">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                                <option value="NC-17">NC-17</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-notes" class="col-md-1 control-label">
+                            Notes:
+                        </label>
+
+                        <div class="col-md-6">
+                            <textarea rows="4"
+                                      cols="50"
+                                      form="usrform"
+                                      class="form-control"
+                                      id="add-notes">Enter notes here ...</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-1 col-md-1">
+                            <button type="button"
+                                    id="add-cancel-button"
+                                    class="btn btn-default"
+                                    onclick="hideAddForm()">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button"
+                                    id="add-button"
+                                    class="btn btn-default">
+                                Create DVD
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="showDvdDiv" style="display: none">
+                <h2 id="show-h2"></h2>
+                <hr style="border: 1px solid;">
+                <h3 id="show-releaseYear"></h3>
+                <h3 id="show-director"></h3>
+                <h3 id="show-rating"></h3>
+                <h3 id="show-notes"> </h3>
+                <div class="col-md-1">
+                    <button type="button"
+                            id="back-button"
+                            class="btn btn-default"
+                            onclick="hideDvdDetails()">
+                        Back
+                    </button>
+                </div>
+            </div>
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+    @*<script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>*@
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/Index.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GuildCars </title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="border: 1px solid black;">
+            <a class="navbar-brand" href="/">
+                <img src="~/Images/logo.jpg" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-item nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("New Inventory", "New", "Inventory", null, new { @class = "nav-item nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Used Inventory", "Used", "Inventory", null, new { @class = "nav-item nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Specials", "Specials", "Home", null, new { @class = "nav-item nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-item nav-link" })</li>
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("admin") || User.IsInRole("sales")))
+                        {
+                            <li class="nav-item">@Html.ActionLink("Sales", "Index", "Sales", null, new { @class = "nav-item nav-link", id = "salesNav" })</li>
+                        }
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                        {
+                            <li class="nav-item">@Html.ActionLink("Admin", "Vehicles", "Admin", null, new { @class = "nav-item nav-link", id = "adminNav" })</li>
+                        }
+                        @*@Html.Partial("_Login")*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container body-content">
+
+
+        @RenderBody()
+
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/bootstrap.validate.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿@model GuildCars.UI.Models.InventoryReportModel
+@{
+    ViewBag.Title = "Inventory";
+}
+<br />
+<h3>Inventory Report</h3>
+<br />
+
+@if (Model.New.Any())
+{
+    <h4>New Vehicles</h4>
+    <div class="row">
+        <div class="col-md-6" style="border: 1px solid black; margin-left: 12px">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Year
+                        </th>
+                        <th>
+                            Make
+                        </th>
+                        <th>
+                            Model
+                        </th>
+                        <th>
+                            Count
+                        </th>
+                        <th>
+                            Stock Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.New)
+                    {
+                        <tr>
+                            <td>@($"{row.Year}")</td>
+                            <td>@($"{row.Make}")</td>
+                            <td>@($"{row.Model}")</td>
+                            <td>@($"{row.Count}")</td>
+                            <td>@($"{row.StockValue.ToString("c")}")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <p>There isn't any New Inventory.</p>
+}
+<br />
+@if (Model.Used.Any())
+{
+    <h4>Used Vehicles</h4>
+    <div class="row">
+        <div class="col-md-6" style="border: 1px solid black; margin-left: 12px">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Year
+                        </th>
+                        <th>
+                            Make
+                        </th>
+                        <th>
+                            Model
+                        </th>
+                        <th>
+                            Count
+                        </th>
+                        <th>
+                            Stock Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.Used)
+                    {
+                        <tr>
+                            <td>@($"{row.Year}")</td>
+                            <td>@($"{row.Make}")</td>
+                            <td>@($"{row.Model}")</td>
+                            <td>@($"{row.Count}")</td>
+                            <td>@($"{row.StockValue.ToString("c")}")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <p>There isn't any Used Inventory.</p>
+}
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+﻿@model GuildCars.Models.Queries.VehicleDetailsItem
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<h3>Vehicle Details</h3>
+<br />
+
+<div class="container">
+    <div class="row" style="border:solid; margin-top: 5px; margin-bottom: 5px;">
+        <div class="col md-3">
+            <p><strong>@Model.Year @Model.Make @Model.Model</strong></p>
+            <p><img src="~/Images/@Model.ImageFileName" /></p>
+        </div>
+        <div class="col-md-3" style:"text-align: center;">
+            <p><strong>Body Style </strong>@Model.BodyStyle</p>
+            <p><strong>Transmission </strong>@Model.Transmission</p>
+            <p><strong>Color </strong>@Model.Color</p>
+        </div>
+        <div class="col-md-3" style:"text-align: center;">
+            <p><strong>Interior </strong>@Model.Interior</p>
+            <p><strong>Mileage </strong>@Model.Mileage</p>
+            <p><strong>VIN# </strong>@Model.VIN</p>
+        </div>
+        <div class="col-md-3">
+            <p><strong>Sale Price </strong>@Model.SalePrice.ToString("c")</p>
+            <p><strong>MSRP </strong>@Model.MSRP.ToString("c")</p>
+        </div>
+        <div class="offset-3 col-md-9">
+            <p><strong>Description </strong>@Model.Description</p>
+        </div>
+        <div class="offset-9 col-md-3">
+            <p>
+                @Html.ActionLink("Contact Us","Contact/" + Model.VIN, "Home", null, new { @class="btn btn-outline-dark btn-md", role="button" })
+                @*<a class="btn btn-outline-dark btn-md" href="~/home/contact" role="button">Contact Us</a>*@
+            </p>
+        </div>
+    </div>
+</div>
