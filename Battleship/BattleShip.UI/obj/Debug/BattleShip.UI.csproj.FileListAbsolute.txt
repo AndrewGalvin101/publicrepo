@@ -1,0 +1,15 @@
+D:\Git\Curriculum\dotnet\ObjectOrientedProgramming\02-Classes-And-Objects\Assessments\Battleship\BattleShip_Start\BattleShip.UI\bin\Debug\BattleShip.UI.exe.config
+D:\Git\Curriculum\dotnet\ObjectOrientedProgramming\02-Classes-And-Objects\Assessments\Battleship\BattleShip_Start\BattleShip.UI\bin\Debug\BattleShip.UI.exe
+D:\Git\Curriculum\dotnet\ObjectOrientedProgramming\02-Classes-And-Objects\Assessments\Battleship\BattleShip_Start\BattleShip.UI\bin\Debug\BattleShip.UI.pdb
+D:\Git\Curriculum\dotnet\ObjectOrientedProgramming\02-Classes-And-Objects\Assessments\Battleship\BattleShip_Start\BattleShip.UI\obj\Debug\BattleShip.UI.csprojResolveAssemblyReference.cache
+D:\Git\Curriculum\dotnet\ObjectOrientedProgramming\02-Classes-And-Objects\Assessments\Battleship\BattleShip_Start\BattleShip.UI\obj\Debug\BattleShip.UI.exe
+D:\Git\Curriculum\dotnet\ObjectOrientedProgramming\02-Classes-And-Objects\Assessments\Battleship\BattleShip_Start\BattleShip.UI\obj\Debug\BattleShip.UI.pdb
+C:\Users\agalv\source\repos\BattleShip.UI\bin\Debug\BattleShip.UI.exe.config
+C:\Users\agalv\source\repos\BattleShip.UI\bin\Debug\BattleShip.UI.exe
+C:\Users\agalv\source\repos\BattleShip.UI\bin\Debug\BattleShip.UI.pdb
+C:\Users\agalv\source\repos\BattleShip.UI\bin\Debug\BattleShip.BLL.dll
+C:\Users\agalv\source\repos\BattleShip.UI\bin\Debug\BattleShip.BLL.pdb
+C:\Users\agalv\source\repos\BattleShip.UI\obj\Debug\BattleShip.UI.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\BattleShip.UI\obj\Debug\BattleShip.UI.csproj.CopyComplete
+C:\Users\agalv\source\repos\BattleShip.UI\obj\Debug\BattleShip.UI.exe
+C:\Users\agalv\source\repos\BattleShip.UI\obj\Debug\BattleShip.UI.pdb

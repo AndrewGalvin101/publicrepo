@@ -1,0 +1,13 @@
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.Controllers.dll
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.Controllers.pdb
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.Models.dll
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.View.dll
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.Models.pdb
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.View.pdb
+C:\Users\agalv\source\repos\BookManager.Controllers\obj\Debug\BookManager.Controllers.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\BookManager.Controllers\obj\Debug\BookManager.Controllers.csproj.CopyComplete
+C:\Users\agalv\source\repos\BookManager.Controllers\obj\Debug\BookManager.Controllers.dll
+C:\Users\agalv\source\repos\BookManager.Controllers\obj\Debug\BookManager.Controllers.pdb
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.Data.dll
+C:\Users\agalv\source\repos\BookManager.Controllers\bin\Debug\BookManager.Data.pdb
+C:\Users\agalv\source\repos\BookManager.Controllers\obj\Debug\BookManager.Controllers.csproj.CoreCompileInputs.cache

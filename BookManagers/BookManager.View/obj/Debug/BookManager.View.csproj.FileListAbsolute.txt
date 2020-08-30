@@ -1,0 +1,11 @@
+C:\Users\agalv\source\repos\BookManager.View\bin\Debug\BookManager.View.dll
+C:\Users\agalv\source\repos\BookManager.View\bin\Debug\BookManager.View.pdb
+C:\Users\agalv\source\repos\BookManager.View\bin\Debug\BookManager.Models.dll
+C:\Users\agalv\source\repos\BookManager.View\bin\Debug\BookManager.Models.pdb
+C:\Users\agalv\source\repos\BookManager.View\obj\Debug\BookManager.View.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\BookManager.View\obj\Debug\BookManager.View.csproj.CopyComplete
+C:\Users\agalv\source\repos\BookManager.View\obj\Debug\BookManager.View.dll
+C:\Users\agalv\source\repos\BookManager.View\obj\Debug\BookManager.View.pdb
+C:\Users\agalv\source\repos\BookManager.View\bin\Debug\BookManager.Data.dll
+C:\Users\agalv\source\repos\BookManager.View\bin\Debug\BookManager.Data.pdb
+C:\Users\agalv\source\repos\BookManager.View\obj\Debug\BookManager.View.csproj.CoreCompileInputs.cache

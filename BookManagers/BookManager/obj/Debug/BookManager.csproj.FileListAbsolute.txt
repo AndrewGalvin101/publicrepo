@@ -1,0 +1,16 @@
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.exe.config
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.exe
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.pdb
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.Controllers.dll
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.View.dll
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.Models.dll
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.Controllers.pdb
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.View.pdb
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.Models.pdb
+C:\Users\agalv\source\repos\BookManager\obj\Debug\BookManager.csprojAssemblyReference.cache
+C:\Users\agalv\source\repos\BookManager\obj\Debug\BookManager.csproj.CopyComplete
+C:\Users\agalv\source\repos\BookManager\obj\Debug\BookManager.exe
+C:\Users\agalv\source\repos\BookManager\obj\Debug\BookManager.pdb
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.Data.dll
+C:\Users\agalv\source\repos\BookManager\bin\Debug\BookManager.Data.pdb
+C:\Users\agalv\source\repos\BookManager\obj\Debug\BookManager.csproj.CoreCompileInputs.cache
